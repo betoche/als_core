@@ -10,13 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_14_012041) do
+ActiveRecord::Schema.define(version: 2019_10_29_231144) do
 
-  create_table "countries", force: :cascade do |t|
+  create_table "continents", force: :cascade do |t|
     t.string "name"
-    t.string "calling_code"
+    t.integer "max_area"
+    t.integer "max_countries"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
+
+# Could not dump table "countries" because of following StandardError
+#   Unknown type '' for column 'continent'
 
 end
