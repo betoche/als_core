@@ -10,4 +10,6 @@ require 'database_cleaner'
 DatabaseCleaner.clean_with(:truncation)
 
 america = Continent.create(name: "America", max_area: 43316000, max_countries: 35)
-Country.create(name: "Nicaragua", calling_code: "+505", continent: america, currency_symbol: "C$", currency_code: "NIO", currency_name: "Córdoba")
+nicaragua = Country.create(name: "Nicaragua", calling_code: "+505", continent: america, currency_symbol: "C$", currency_code: "NIO", currency_name: "Córdoba")
+cordoba = Currency.create(name: "Córdoba", symbol: "C$", code: "NIO", country: nicaragua)
+nicaragua.currency = cordoba

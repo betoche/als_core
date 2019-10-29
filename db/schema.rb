@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_29_231144) do
+ActiveRecord::Schema.define(version: 2019_10_29_233726) do
 
   create_table "continents", force: :cascade do |t|
     t.string "name"
@@ -22,5 +22,8 @@ ActiveRecord::Schema.define(version: 2019_10_29_231144) do
 
 # Could not dump table "countries" because of following StandardError
 #   Unknown type '' for column 'continent'
+
+# Could not dump table "currencies" because of following StandardError
+#   Unknown type '' for column 'country'
 
 end
