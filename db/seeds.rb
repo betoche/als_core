@@ -21,4 +21,4 @@ chineseYuan = Currency.create(name: "Chinese Yuan", symbol: "¥ ", code: "CNY", 
 nicaragua.currency = cordoba
 nicaragua.save
 china.currency = chineseYuan
-nicaragua.save
+china.save
