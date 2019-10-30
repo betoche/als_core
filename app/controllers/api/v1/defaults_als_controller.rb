@@ -1,4 +1,4 @@
-class DefaultsAlsController < ApplicationController
+class Api::V1::DefaultsAlsController < ApplicationController
   before_action :set_defaults_al, only: [:show, :update, :destroy]
 
   # GET /defaults_als
