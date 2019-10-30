@@ -1,0 +1,2 @@
+class DefaultsAls < ApplicationRecord
+end

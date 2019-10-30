@@ -13,12 +13,21 @@ america = Continent.create(name: "America", max_area: 43316000, max_countries: 3
 asia = Continent.create(name: "Asia", max_area: 44541138, max_countries: 49)
 
 nicaragua = Country.create(name: "Nicaragua", calling_code: "+505", continent: america, currency_symbol: "C$", currency_code: "NIO", currency_name: "Córdoba", area: 130375, population: 6167237)
+elSalvador = Country.create(name: "El Salvador", calling_code: "+503", continent: america, currency_symbol: "$", currency_code: "USD", currency_name: "United States dollar", area: 21041, population: 6344722)
+unitedStates = Country.create(name: "United States", calling_code: "+1", continent: america, currency_symbol: "$", currency_code: "USD", currency_name: "United States dollar", area: 9833520, population: 327167434)
 china = Country.create(name: "China", calling_code: "+86", continent: asia, currency_symbol: "¥", currency_code: "CNY", currency_name: "Chinese Yuan", area: 9596961, population: 1403500365)
 
 cordoba = Currency.create(name: "Córdoba", symbol: "C$", code: "NIO", country: nicaragua)
 chineseYuan = Currency.create(name: "Chinese Yuan", symbol: "¥ ", code: "CNY", country: china)
+dollar = Currency.create(name: "United States dollar", symbol: "$", code: "USD", country: unitedStates)
+
+DefaultsAls.create( currency: dollar, country: nicaragua )
 
 nicaragua.currency = cordoba
 nicaragua.save
 china.currency = chineseYuan
 china.save
+elSalvador.currency = dollar
+elSalvador.save
+unitedStates.currency = dollar
+unitedStates.save
