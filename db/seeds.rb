@@ -23,6 +23,9 @@ dollar = Currency.create(name: "United States dollar", symbol: "$", code: "USD",
 
 DefaultsAls.create( currency: dollar, country: nicaragua )
 
+ExchangeRate.create( currency: cordoba, date: Date.current, rate: 34.0162)
+ExchangeRate.create( currency: chineseYuan, date: Date.current, rate: 7.03729)
+
 nicaragua.currency = cordoba
 nicaragua.save
 china.currency = chineseYuan
