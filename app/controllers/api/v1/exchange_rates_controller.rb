@@ -49,8 +49,8 @@ class Api::V1::ExchangeRatesController < ApplicationController
 
     converted_amount = amount * rate
 
-
-    render json: {from: currency_from.currency.name, to: currency_to.currency.name, amount: number_with_precision(amount, :precision => 2), rate: number_with_precision(rate, :precision => 6), result: number_with_precision(converted_amount, :precision => 2)}
+    data = {from: currency_from.currency.name, to: currency_to.currency.name, amount: number_with_precision(amount, :precision => 2), rate: number_with_precision(rate, :precision => 6), result: number_with_precision(converted_amount, :precision => 2)}
+    render json: { data: data, status: :ok }
   end
 
   private
