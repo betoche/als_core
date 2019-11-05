@@ -9,6 +9,7 @@ Rails.application.routes.draw do
         resources :defaults_als
         resources :exchange_rates
         resources :document_types
+        resources :document_type_by_countries
     end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_05_173457) do
+ActiveRecord::Schema.define(version: 2019_11_05_175413) do
 
   create_table "continents", force: :cascade do |t|
     t.string "name"
@@ -28,6 +28,20 @@ ActiveRecord::Schema.define(version: 2019_11_05_173457) do
 
 # Could not dump table "defaults_als" because of following StandardError
 #   Unknown type 'reference' for column 'currency'
+
+  create_table "document_type_by_countries", force: :cascade do |t|
+    t.integer "country_id", null: false
+    t.integer "document_type_id", null: false
+    t.string "name"
+    t.string "abbreviation"
+    t.boolean "local"
+    t.boolean "international"
+    t.integer "number_length"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["country_id"], name: "index_document_type_by_countries_on_country_id"
+    t.index ["document_type_id"], name: "index_document_type_by_countries_on_document_type_id"
+  end
 
   create_table "document_types", force: :cascade do |t|
     t.string "name"
@@ -47,5 +61,7 @@ ActiveRecord::Schema.define(version: 2019_11_05_173457) do
     t.index ["currency_id"], name: "index_exchange_rates_on_currency_id"
   end
 
+  add_foreign_key "document_type_by_countries", "countries"
+  add_foreign_key "document_type_by_countries", "document_types"
   add_foreign_key "exchange_rates", "currencies"
 end

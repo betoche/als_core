@@ -41,3 +41,7 @@ unitedStates.save
 dui = DocumentType.create(name: "Documento de Identidad Unico", abbreviation: "DUI", local: true, international: false)
 cedula = DocumentType.create(name: "Cédula de Identidad", abbreviation: "CED", local: true, international: false)
 passport = DocumentType.create(name: "Pasaporte", abbreviation: "PASS", local: true, international: true)
+
+cedulaNicaraguense = DocumentTypeByCountry.create(country: nicaragua, document_type: cedula, local: true, international: false, name: "Cédula de Identidad", abbreviation: "Ced", number_length: 17)
+pasaporteNicaraguense = DocumentTypeByCountry.create(country: nicaragua, document_type: passport, local: true, international: true, name: "Pasaporte", abbreviation: "PAS", number_length: 9)
+duiSalvadoreno = DocumentTypeByCountry.create(country: elSalvador, document_type: dui, local: true, international: false, name: "Documento Único de Identidad", abbreviation: "Dui", number_length: 17)
