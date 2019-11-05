@@ -37,3 +37,7 @@ elSalvador.currency = dollar
 elSalvador.save
 unitedStates.currency = dollar
 unitedStates.save
+
+dui = DocumentType.create(name: "Documento de Identidad Unico", abbreviation: "DUI", local: true, international: false)
+cedula = DocumentType.create(name: "Cédula de Identidad", abbreviation: "CED", local: true, international: false)
+passport = DocumentType.create(name: "Pasaporte", abbreviation: "PASS", local: true, international: true)

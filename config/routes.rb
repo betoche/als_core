@@ -8,6 +8,7 @@ Rails.application.routes.draw do
         resources :currencies
         resources :defaults_als
         resources :exchange_rates
+        resources :document_types
     end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
